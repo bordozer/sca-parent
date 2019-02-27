@@ -1,0 +1,30 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'com.bordozer.commons'
+version = '3.02'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    springBootStarterVersion = '2.0.4.RELEASE'
+    spotbugsVersion = '3.1.8'
+    lombockVersion = '1.18.4'
+    junit5Version = '5.3.1'
+}
+
+dependencies {
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: springBootStarterVersion
+
+    compile group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.2'
+    compile group: 'com.github.spotbugs', name: 'spotbugs', version: spotbugsVersion
+    compile group: 'org.projectlombok', name: 'lombok', version: lombockVersion
+
+    compile group: 'commons-io', name: 'commons-io', version: '2.6'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.7'
+
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: springBootStarterVersion
+    compile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: junit5Version
+}
